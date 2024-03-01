@@ -14,5 +14,5 @@ COPY schoolErp-0.0.1-SNAPSHOT.jar /app/schoolErp.jar
 # Description:       School Project for Spring Boot
 # chkconfig:         2345 99 01
 ### END INIT INFO
-
+EXPOSE 8090
 CMD ["java", "-jar", "schoolErp.jar"]
