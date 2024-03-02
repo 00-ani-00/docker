@@ -1,18 +1,14 @@
-FROM openjdk:11-jre-slim
+# Use a base image with Java and Alpine Linux
+FROM adoptopenjdk/openjdk11:alpine-jre
 
+# Set the working directory in the container
 WORKDIR /app
 
-COPY schoolErp-0.0.1-SNAPSHOT.jar /app/schoolErp.jar
+# Copy the Spring Boot application JAR file into the container
+COPY schoolErp-0.0.1-SNAPSHOT.jar /app/schoolErp-0.0.1-SNAPSHOT.jar
 
-### BEGIN INIT INFO
-# Provides:          schoolErp
-# Required-Start:    $remote_fs $syslog $network
-# Required-Stop:     $remote_fs $syslog $network
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: schoolErp
-# Description:       School Project for Spring Boot
-# chkconfig:         2345 99 01
-### END INIT INFO
-EXPOSE 8090
-CMD ["java", "-jar", "schoolErp.jar"]
+# Expose the port that your Spring Boot application runs on
+EXPOSE 8080
+
+# Specify the command to run your Spring Boot application when the container starts
+CMD ["java", "-jar", "schoolErp-0.0.1-SNAPSHOT.jar"]
