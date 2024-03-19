@@ -3,9 +3,9 @@ RUN yum install java -y
 RUN mkdir /opt/tomcat
 WORKDIR /opt/tomcat
 
-ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.94/bin/apache-tomcat-8.5.94.tar.gz .
-RUN tar -xzf apache-tomcat-8.5.94.tar.gz
-RUN mv apache-tomcat-8.5.94/* /opt/tomcat/
+ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.tar.gz . 
+RUN tar -xzf apache-tomcat-8.5.99.tar.gz
+RUN mv apache-tomcat-8.5.99/* /opt/tomcat/
 COPY ./mysql-connector.jar /opt/tomcat/lib
 COPY ./student.war /opt/tomcat/webapps
 EXPOSE 8080
