@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t my-app-nginx:latest .
+      run: docker build -t my-app-nginx:latest docker-file-tomcat/.
 
     - name: Tag Docker image
       run: docker tag my-app-nginx:latest anilagad/my-app-nginx:latest
