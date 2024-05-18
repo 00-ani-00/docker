@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  frontend:
+  frontend: anilagad/frontend-tier-image:latest
     image: 
     ports:
       - "80:80"
@@ -10,7 +10,7 @@ services:
       - backend
 
   backend:
-    image: backend-image:latest
+    image: anilagad/backend-tier-image:latest
     ports:
       - "8080:8080"
     environment:
@@ -19,7 +19,7 @@ services:
       - database
 
   database:
-    image: postgres:latest
+    image: anilagad/database-tier-image
     environment:
       POSTGRES_DB: db_name
       POSTGRES_USER: username
